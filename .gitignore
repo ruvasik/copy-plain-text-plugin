@@ -1,6 +1,7 @@
 out/
 node_modules/
 .vscode-test/
+build/
 *.vsix
 .DS_Store
 *.log
