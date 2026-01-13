@@ -14,10 +14,24 @@ export function markdownToPlainText(text: string): string {
   const codeBlocks: string[] = [];
   
   // Handle fenced code blocks (``` or ~~~)
-  result = result.replace(/^([ \t]*)(```|~~~)[\w]*\n([\s\S]*?)\n\1\2\s*$/gm, (_, indent, _fence, code) => {
+  // More robust pattern that handles various line ending scenarios
+  // Use placeholder without internal underscores to avoid italic marker conflicts
+  result = result.replace(/^([ \t]*)(```|~~~)([\w]*)\r?\n([\s\S]*?)\r?\n\1\2\s*$/gm, (_, indent, _fence, _lang, code) => {
     const index = codeBlocks.length;
     codeBlocks.push(indent + code);
-    return `__CODE_BLOCK_${index}__`;
+    return `\x00CODEBLOCK${index}\x00`;
+  });
+  
+  // Also handle code blocks that might not have content on separate lines
+  result = result.replace(/^([ \t]*)(```|~~~)([\w]*)\r?\n([\s\S]*?)(```|~~~)\s*$/gm, (match, indent, openFence, _lang, code, closeFence) => {
+    // Only match if fences are the same type
+    if (openFence !== closeFence) return match;
+    // Skip if already processed
+    if (code.includes('\x00CODEBLOCK')) return match;
+    const index = codeBlocks.length;
+    // Remove trailing newline from code if present
+    codeBlocks.push(indent + code.replace(/\r?\n$/, ''));
+    return `\x00CODEBLOCK${index}\x00`;
   });
 
   // Handle inline code blocks - preserve content, remove backticks
@@ -58,7 +72,7 @@ export function markdownToPlainText(text: string): string {
 
   // Restore code blocks
   codeBlocks.forEach((code, index) => {
-    result = result.replace(`__CODE_BLOCK_${index}__`, code);
+    result = result.replace(`\x00CODEBLOCK${index}\x00`, code);
   });
 
   // Clean up multiple empty lines (but preserve single empty lines)

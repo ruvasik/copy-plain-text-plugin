@@ -175,6 +175,56 @@ function decodeHtmlEntities(text: string): string {
     '&frac12;': '½',
     '&frac14;': '¼',
     '&frac34;': '¾',
+    // Greek letters
+    '&alpha;': 'α',
+    '&beta;': 'β',
+    '&gamma;': 'γ',
+    '&delta;': 'δ',
+    '&epsilon;': 'ε',
+    '&zeta;': 'ζ',
+    '&eta;': 'η',
+    '&theta;': 'θ',
+    '&iota;': 'ι',
+    '&kappa;': 'κ',
+    '&lambda;': 'λ',
+    '&mu;': 'μ',
+    '&nu;': 'ν',
+    '&xi;': 'ξ',
+    '&omicron;': 'ο',
+    '&pi;': 'π',
+    '&rho;': 'ρ',
+    '&sigma;': 'σ',
+    '&tau;': 'τ',
+    '&upsilon;': 'υ',
+    '&phi;': 'φ',
+    '&chi;': 'χ',
+    '&psi;': 'ψ',
+    '&omega;': 'ω',
+    // Greek uppercase
+    '&Alpha;': 'Α',
+    '&Beta;': 'Β',
+    '&Gamma;': 'Γ',
+    '&Delta;': 'Δ',
+    '&Epsilon;': 'Ε',
+    '&Zeta;': 'Ζ',
+    '&Eta;': 'Η',
+    '&Theta;': 'Θ',
+    '&Iota;': 'Ι',
+    '&Kappa;': 'Κ',
+    '&Lambda;': 'Λ',
+    '&Mu;': 'Μ',
+    '&Nu;': 'Ν',
+    '&Xi;': 'Ξ',
+    '&Omicron;': 'Ο',
+    '&Pi;': 'Π',
+    '&Rho;': 'Ρ',
+    '&Sigma;': 'Σ',
+    '&Tau;': 'Τ',
+    '&Upsilon;': 'Υ',
+    '&Phi;': 'Φ',
+    '&Chi;': 'Χ',
+    '&Psi;': 'Ψ',
+    '&Omega;': 'Ω',
   };
 
   let result = text;
@@ -186,12 +236,16 @@ function decodeHtmlEntities(text: string): string {
 
   // Replace numeric entities (decimal)
   result = result.replace(/&#(\d+);/g, (_, code) => {
-    return String.fromCharCode(parseInt(code, 10));
+    const codePoint = parseInt(code, 10);
+    // Handle code points above 0xFFFF correctly
+    return codePoint <= 0x10FFFF ? String.fromCodePoint(codePoint) : '';
   });
 
   // Replace numeric entities (hex)
   result = result.replace(/&#x([0-9a-f]+);/gi, (_, code) => {
-    return String.fromCharCode(parseInt(code, 16));
+    const codePoint = parseInt(code, 16);
+    // Handle code points above 0xFFFF correctly
+    return codePoint <= 0x10FFFF ? String.fromCodePoint(codePoint) : '';
   });
 
   return result;
