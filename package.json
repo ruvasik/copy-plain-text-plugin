@@ -3,7 +3,17 @@
   "displayName": "Copy as Plain Text",
   "description": "Copy selected text as plain text, removing Markdown/HTML markup while preserving line breaks and indentation",
   "version": "1.0.0",
-  "publisher": "ruvasik",
+  "publisher": "Vladimir @ruvasik Alekseev",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ruvasik/copy-plain-text"
+  },
+  "icon": "images/icon.png",
+  "galleryBanner": {
+    "color": "#1e1e1e",
+    "theme": "dark"
+  },
   "engines": {
     "vscode": "^1.74.0"
   },

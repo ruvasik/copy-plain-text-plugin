@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <rect width="128" height="128" rx="16" fill="#2d2d2d"/>
+  <rect x="24" y="28" width="60" height="72" rx="4" fill="#4a4a4a" stroke="#666" stroke-width="2"/>
+  <rect x="44" y="48" width="60" height="72" rx="4" fill="#3c3c3c" stroke="#888" stroke-width="2"/>
+  <text x="74" y="92" font-family="system-ui, sans-serif" font-size="24" font-weight="bold" fill="#00d4aa" text-anchor="middle">Aa</text>
+  <line x1="54" y1="62" x2="94" y2="62" stroke="#666" stroke-width="3" stroke-linecap="round"/>
+  <line x1="54" y1="74" x2="84" y2="74" stroke="#666" stroke-width="3" stroke-linecap="round"/>
+  <line x1="54" y1="104" x2="74" y2="104" stroke="#666" stroke-width="3" stroke-linecap="round"/>
+</svg>
