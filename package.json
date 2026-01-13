@@ -3,7 +3,11 @@
   "displayName": "Copy as Plain Text",
   "description": "Copy selected text as plain text, removing Markdown/HTML markup while preserving line breaks and indentation",
   "version": "1.0.0",
-  "publisher": "Vladimir @ruvasik Alekseev",
+  "publisher": "ruvasik",
+  "author": {
+    "name": "Vladimir @ruvasik Alekseev",
+    "email": "vcs@avs.guru"
+  },
   "license": "MIT",
   "repository": {
     "type": "git",
