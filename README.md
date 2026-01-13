@@ -69,6 +69,13 @@ Paragraph with bold text.
 
 ## Installation
 
+### From Marketplace
+
+- **VS Code**: [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=ruvasik.copy-plain-text)
+- **Cursor / Open VSX**: [Open VSX Registry](https://open-vsx.org/extension/ruvasik/copy-plain-text)
+
+Or search for "Copy as Plain Text" in the Extensions panel.
+
 ### From Source
 
 1. Clone the repository
