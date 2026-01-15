@@ -76,6 +76,16 @@ Paragraph with bold text.
 
 Or search for "Copy as Plain Text" in the Extensions panel.
 
+## ⭐ Rate This Extension
+
+If you find this extension useful, please consider rating it or leaving a review:
+
+- **VS Code Marketplace**: [Rate on VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=ruvasik.copy-plain-text)
+- **Open VSX**: [Rate on Open VSX](https://open-vsx.org/extension/ruvasik/copy-plain-text)
+- **GitHub**: [⭐ Star on GitHub](https://github.com/ruvasik/copy-plain-text-plugin)
+
+Your feedback helps improve the extension and reach more users!
+
 ### From Source
 
 1. Clone the repository

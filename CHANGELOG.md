@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.1.0] - 2024-12-XX
+## [1.1.0]
 
 ### Fixed
 - Fixed markdown code block processing bug where placeholders were incorrectly interpreted as italic markers
@@ -21,7 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Combining diacritical marks
   - HTML numeric entities (decimal and hex) for all Unicode code points
 
-## [1.0.0] - Initial Release
+## [1.0.0]
 
 ### Added
 - Copy selected text as plain text, removing Markdown/HTML markup
